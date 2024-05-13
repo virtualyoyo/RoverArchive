@@ -11,6 +11,7 @@
     "@mdi/font": "7.0.96",
     "core-js": "^3.34.0",
     "leaflet": "^1.9.4",
+    "leaflet-rastercoords": "^1.0.6",
     "roboto-fontface": "*",
     "vue": "^3.4.0",
     "vuetify": "^3.5.0"

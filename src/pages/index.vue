@@ -1,14 +1,13 @@
 <template>
   <v-container class="bg-surface-variant">
-    <v-row no-gutters>
-      <v-col class="mx-2">
+    <v-row no-gutters align="start" justify="space-around">
+      <v-col cols="12" sm="12" md="5" lg="5">
         <div class="rounded-carousel">
           <v-carousel
-            height="300"
+            height=auto
             show-arrows="hover"
             cycle
             hide-delimiter-background
-            rounded="lg"
           >
             <v-carousel-item v-for="(imageUrl, i) in imageUrls" :key="i">
               <v-card flat tile>
@@ -18,7 +17,7 @@
           </v-carousel>
         </div>
       </v-col>
-      <v-col class="mx-2">
+      <v-col cols="12" sm="12" md="5" lg="5">
         <v-sheet class="mx-auto" rounded="xl" height="100%"> 
           <div class="d-flex fill-height align-center justify-center text-h4 font-weight-bold">
             卡池 或 個人遊戲狀態

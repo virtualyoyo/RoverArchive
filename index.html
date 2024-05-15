@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="https://scontent.ftpe7-1.fna.fbcdn.net/v/t39.30808-1/434654781_122117808458242966_1109056768038378690_n.jpg?stp=dst-jpg_p200x200&_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=G1glhIvKkxoQ7kNvgHMp70G&_nc_ht=scontent.ftpe7-1.fna&oh=00_AfCDXEScPa62RGYVMf8r2CzLxQJHkB0EKIptGhfby-ixoQ&oe=663FDD9E" />
+  <link rel="icon" href="https://wutheringwaves.kurogames.com/static4.0/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>藍色星原</title>
+  <title>漂泊檔案</title>
 </head>
 
 <body>
@@ -14,3 +14,20 @@
 </body>
 
 </html>
+
+<script>
+    // 從 API 獲取圖片的 bytes
+  fetch('https://script.google.com/macros/s/AKfycbz6OQmu5vmJB0PaJejo_Kmzjpc7y4DNnRGMnHmcAig5sjxslh3V3TCHGRivOfn8kR1B5w/exec')
+    .then(response => response.arrayBuffer())
+    .then(buffer => {
+      let bytes = new Uint8Array(buffer);
+      let base64String = btoa(String.fromCharCode.apply(null, bytes));
+
+      // 設置為網站的 favicon
+      let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+      link.type = 'image/x-icon';
+      link.rel = 'icon';
+      link.href = 'data:image/jpeg;base64,' + base64String;
+      document.getElementsByTagName('head')[0].appendChild(link);
+    });
+</script>

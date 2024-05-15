@@ -1,6 +1,7 @@
 <template>
+  <Drawer v-if="this.$route.meta.layout==null" />
   <v-app>
-    <Drawer />
+    
     
     <v-main>
       <router-view />

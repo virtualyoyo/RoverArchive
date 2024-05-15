@@ -14,20 +14,3 @@
 </body>
 
 </html>
-
-<script>
-    // 從 API 獲取圖片的 bytes
-  fetch('https://script.google.com/macros/s/AKfycbz6OQmu5vmJB0PaJejo_Kmzjpc7y4DNnRGMnHmcAig5sjxslh3V3TCHGRivOfn8kR1B5w/exec')
-    .then(response => response.arrayBuffer())
-    .then(buffer => {
-      let bytes = new Uint8Array(buffer);
-      let base64String = btoa(String.fromCharCode.apply(null, bytes));
-
-      // 設置為網站的 favicon
-      let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-      link.type = 'image/x-icon';
-      link.rel = 'icon';
-      link.href = 'data:image/jpeg;base64,' + base64String;
-      document.getElementsByTagName('head')[0].appendChild(link);
-    });
-</script>

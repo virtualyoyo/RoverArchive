@@ -10,31 +10,15 @@
   <link rel="preload" as="font" type="font/ttf" href="/RoverArchive/assets/materialdesignicons-webfont-D3kAzl71.ttf" crossorigin="anonymous">
 
   <meta charset="UTF-8" />
-  <link rel="icon" id="favicon" href="data:image/png;base64," />
+  <link rel="icon" href="https://wutheringwaves.kurogames.com/static4.0/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>漂泊檔案</title>
-  <script type="module" crossorigin src="/RoverArchive/assets/index-BwMQks5-.js"></script>
+  <script type="module" crossorigin src="/RoverArchive/assets/index-BoXnhhVc.js"></script>
   <link rel="stylesheet" crossorigin href="/RoverArchive/assets/index-BrGzRYkq.css">
 </head>
 
 <body>
   <div id="app"></div>
-  <script>
-    window.onload = function() {
-      fetch('https://script.google.com/macros/s/AKfycbyMsqU28kOyOx33-ke7dcVvI_Igfj-SqWR0k9sql7XI1J23vz489Lj3NSVCdw2uXHzC-g/exec')
-        .then(response => response.json())
-        .then(data => {
-          data.forEach(item => {
-            if (item.id === '001') { // 只處理 id 為 '001' 的項目
-              let icon = item.IconRoleHead; // Assuming IconRoleHead is a Base64 string
-              let favicon = document.getElementById('favicon');
-              favicon.href = 'data:image/jpeg;base64,' + icon;
-            }
-          });
-        });
-    };
-</script>
 </body>
 
 </html>
-

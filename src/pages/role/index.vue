@@ -19,8 +19,8 @@
     <v-row dense>
       <v-col v-for="n in 10" :key="n" :cols="12" :sm="6" :md="4" :lg="3">
         <v-sheet class="pa-2 ma-2" @click="goToDetail(n)">
-          <v-img :src="getIconRoleHeadUrl(n)[0]" height="256px"></v-img>
-          {{ getIconRoleHeadUrl(n)[1] }}
+          <v-img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihb4I-EmfGRX6JL-pHeI5VsJ4K-2IYnLt9K4N2IPQ50YXX65wCBcX96_r_ACE1MECkGxjvYC1haIqsAloQMcV-ecyAPuGIMt9q4=w968-h387" height="200px"></v-img>
+          col {{ n }}
         </v-sheet>
       </v-col>
     </v-row>
@@ -29,38 +29,11 @@
 
 <script>
 export default {
-  data() {
-    return {
-      iconRoleHeads: [],
-    };
-  },
-  created() {
-    fetch(
-      "https://script.google.com/macros/s/AKfycbyMsqU28kOyOx33-ke7dcVvI_Igfj-SqWR0k9sql7XI1J23vz489Lj3NSVCdw2uXHzC-g/exec"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        this.iconRoleHeads = data;
-      });
-  },
   methods: {
     goToDetail(colNumber) {
       // 使用 $router.push() 導航到 role/detail 頁面並帶上 id 參數
       this.$router.push(`/role/detail?id=${colNumber}`);
-    },
-    getIconRoleHeadUrl(colNumber) {
-      let data = [];
-      let url = "";
-      let id = colNumber < 10 ? `00${colNumber}` : `0${colNumber}`;
-      this.iconRoleHeads.forEach((item) => {
-        if (item.id === id) {
-          let icon = item.IconRoleHead; // Assuming IconRoleHead is a Base64 string
-          url = "data:image/jpeg;base64," + icon;
-          data = [url,item.name]
-        }
-      });
-      return data;
-    },
-  },
+    }
+  }
 };
 </script>
